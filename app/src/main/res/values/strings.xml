@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ITIS-Android-Inception_22</string>
+
+    <string name="main_fragment_title">Первый фрагмент</string>
+    <string name="next">Далее</string>
+    <string name="replace">Заменить</string>
+    <string name="click_me">Нажми меня</string>
+
+    <string name="second_fragment_title">Второй фрагмент</string>
 </resources>

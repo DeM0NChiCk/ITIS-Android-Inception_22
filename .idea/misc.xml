@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/actionbar_default.xml" value="0.2469298245614035" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/activity_main.xml" value="0.24780701754385964" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/appbar_default.xml" value="0.24780701754385964" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_main_page.xml" value="0.2469298245614035" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_second_page.xml" value="0.2469298245614035" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/toolbar_default.xml" value="0.24780701754385964" />
       </map>
     </option>

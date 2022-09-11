@@ -4,4 +4,6 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize"
-    app:layout_collapseMode="pin" />
+    android:background="@color/lime_500"
+    app:layout_collapseMode="pin"
+    app:titleTextColor="@android:color/white" />
