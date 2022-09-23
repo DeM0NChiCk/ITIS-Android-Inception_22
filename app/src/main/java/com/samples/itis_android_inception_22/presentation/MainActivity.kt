@@ -7,6 +7,7 @@ import com.samples.itis_android_inception_22.R
 import com.samples.itis_android_inception_22.databinding.ActivityMainBinding
 import com.samples.itis_android_inception_22.presentation.base.BaseActivity
 import com.samples.itis_android_inception_22.presentation.fragments.mainPage.MainPageFragment
+import com.samples.itis_android_inception_22.presentation.fragments.paramsPage.LayoutParamsFragment
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
@@ -19,7 +20,12 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         window.statusBarColor = ContextCompat.getColor(this, R.color.lime_600)
 
         supportFragmentManager.beginTransaction()
-            .add(fragmentsContainerId, MainPageFragment.getInstance(), MainPageFragment.MAIN_PAGE_FRAGMENT_TAG)
+            //.add(fragmentsContainerId, MainPageFragment.getInstance(), MainPageFragment.MAIN_PAGE_FRAGMENT_TAG)
+            .add(
+                fragmentsContainerId,
+                LayoutParamsFragment.getInstance(),
+                LayoutParamsFragment.LAYOUT_PARAMS_FRAGMENT_TAG
+            )
             .commit()
     }
 }

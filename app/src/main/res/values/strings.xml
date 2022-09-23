@@ -5,6 +5,14 @@
     <string name="next">Далее</string>
     <string name="replace">Заменить</string>
     <string name="click_me">Нажми меня</string>
+    <string name="go_to_next_page">На следующую страницу</string>
+    <string name="first_button_text">Первая кнопка</string>
+    <string name="second_button_text">Вторая кнопка</string>
+    <string name="check_for_result_btn">Проверить результат</string>
+    <string name="enter_email_hint">Введите адрес электронной почты</string>
+    <string name="enter_email_helper_text">Например, jeffreymmviii@gmail.com</string>
+    <string name="check_passed_text">Проверка прошла успешно</string>
+    <string name="check_failed_text">Введенная строка не содержит нужно символа</string>
 
     <string name="second_fragment_title">Второй фрагмент</string>
 </resources>
