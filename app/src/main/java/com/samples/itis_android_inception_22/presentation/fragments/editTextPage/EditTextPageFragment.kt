@@ -53,6 +53,9 @@ class EditTextPageFragment : BaseFragment(R.layout.fragment_edit_text_page) {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
                 override fun onTextChanged(input: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    if(input?.startsWith("+6") == true) {
+
+                    }
                     input?.let {
                         if (it.length > 10) {
                             checkResultBtn.isEnabled = it.length >= 10

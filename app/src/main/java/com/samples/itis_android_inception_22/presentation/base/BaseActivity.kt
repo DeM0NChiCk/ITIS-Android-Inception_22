@@ -57,6 +57,7 @@ abstract class BaseActivity(layout: Int) : AppCompatActivity(layout) {
     fun replaceFragment(fragment: Fragment, tag: String) {
         supportFragmentManager.beginTransaction()
             .replace(fragmentsContainerId, fragment, tag)
+            .addToBackStack(null)
             .commit()
     }
 
