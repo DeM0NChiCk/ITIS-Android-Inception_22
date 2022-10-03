@@ -14,5 +14,13 @@
     <string name="check_passed_text">Проверка прошла успешно</string>
     <string name="check_failed_text">Введенная строка не содержит нужно символа</string>
 
+    <string name="initial_page_title">Your statistics</string>
+    <string name="initial_page_toolbar_template">Welcome, %1$s</string>
+
+    <string name="card_title_text">Your weekly score</string>
+    <string name="facebook_text">Facebook</string>
+    <string name="slack_text">Slack</string>
+    <string name="subtitle_text">Summary</string>
+
     <string name="second_fragment_title">Второй фрагмент</string>
 </resources>
