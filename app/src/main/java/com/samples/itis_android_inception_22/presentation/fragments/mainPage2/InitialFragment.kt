@@ -70,11 +70,17 @@ class InitialFragment : Fragment() {
             phoneEnterEt.addTextChangedListener(
                 onTextChanged = { input: CharSequence?, count: Int, start: Int, before: Int ->
                     input?.let { str ->
-                        println()
                         if (start > before) {
-                            str.length < 5
-                            phoneEnterEt.setText("+7 (9")
-                            phoneEnterEt.setSelection(phoneEnterEt.text?.length ?: 5)
+                            when {
+                                str.length < 5 -> {
+                                    phoneEnterEt.setText("+7 (9")
+                                    phoneEnterEt.setSelection(phoneEnterEt.text?.length ?: 5)
+                                }
+                                else -> {
+                                    // extra logic
+                                }
+                            }
+
                         }
                     }
                 })
