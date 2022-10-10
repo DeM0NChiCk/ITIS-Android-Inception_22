@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/drawable/ic_mobile_application_2645.xml" value="0.2165" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/drawable/ic_three_dots_svgrepo_com.xml" value="0.2165" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/drawable/item_divider_bg.xml" value="0.2165" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/drawable/rectangle_rounded_blue_24dp.xml" value="0.2165" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/drawable/rectangle_rounded_white_24dp.xml" value="0.2165" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/drawable/rv_divider_blue.xml" value="0.2165" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/actionbar_default.xml" value="0.2469298245614035" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/activity_main.xml" value="0.24780701754385964" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/appbar_default.xml" value="0.24780701754385964" />
@@ -14,9 +16,14 @@
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_initial.xml" value="0.2469298245614035" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_layout_params.xml" value="0.4363636212309535" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_main_page.xml" value="0.2469298245614035" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_recycler_view.xml" value="0.2879999900124293" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_recycler_view_example.xml" value="0.2469298245614035" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_second_page.xml" value="0.2469298245614035" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/fragment_third_page.xml" value="0.21818181061547676" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/item_outer_view_holder.xml" value="0.24780701754385964" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/item_page_title_divider.xml" value="0.2469298245614035" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/item_recycler_text.xml" value="0.24780701754385964" />
+        <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/item_text_view_sample.xml" value="0.2469298245614035" />
         <entry key="..\:/Android/AndroidProjects/ITISAndroidInception_22/app/src/main/res/layout/toolbar_default.xml" value="0.24780701754385964" />
       </map>
     </option>
