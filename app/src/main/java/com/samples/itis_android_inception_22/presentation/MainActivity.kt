@@ -6,7 +6,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.samples.itis_android_inception_22.R
 import com.samples.itis_android_inception_22.databinding.ActivityMainBinding
 import com.samples.itis_android_inception_22.presentation.base.BaseActivity
-import com.samples.itis_android_inception_22.presentation.fragments.recyclerViewExample.RecyclerViewExampleFragment
+import com.samples.itis_android_inception_22.presentation.fragments.planetsScreen.PlanetsMainFragment
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
@@ -21,8 +21,8 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         supportFragmentManager.beginTransaction()
             .add(
                 fragmentsContainerId,
-                RecyclerViewExampleFragment.getInstance(),
-                RecyclerViewExampleFragment.RECYCLER_VIEW_FRAGMENT_TAG
+                PlanetsMainFragment.getInstance(),
+                PlanetsMainFragment.PLANETS_MAIN_FRAGMENT_TAG
             )
             .commit()
     }

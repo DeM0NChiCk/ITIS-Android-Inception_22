@@ -19,6 +19,8 @@
     <color name="blue_200">#6680f5</color>
 
     <color name="screen_background_gray">#f5f8fe</color>
+    <color name="gray_50">#E3E3E3</color>
+    <color name="gray_100">#C7C7C8</color>
     <color name="gray_300">#909092</color>
     <color name="gray_600">#8E8E8E</color>
 
