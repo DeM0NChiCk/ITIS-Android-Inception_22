@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/third_tab_navigation_graph"
+    app:startDestination="@id/gridManagerFragment">
+
+    <fragment
+        android:id="@+id/gridManagerFragment"
+        android:name="com.samples.itis_android_inception_22.presentation.fragments.gridFragment.GridManagerFragment"
+        android:label="GridManagerFragment" />
+</navigation>

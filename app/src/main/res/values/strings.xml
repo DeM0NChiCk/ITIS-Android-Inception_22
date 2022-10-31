@@ -49,4 +49,8 @@
     <string name="neptune">Нептун</string>
     <string name="pluto">Плутон</string>
 
+    <!-- Bottom navigation menu -->
+    <string name="bnv_main_item">Главная</string>
+    <string name="bnv_details_item">Подробнее</string>
+    <string name="bnv_settings_item">Настройки</string>
 </resources>

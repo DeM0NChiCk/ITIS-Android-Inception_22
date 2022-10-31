@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainPageFragment"
+        android:icon="@drawable/ic_home_black"
+        android:title="@string/bnv_main_item" />
+
+    <item
+        android:id="@+id/editTextPageFragment"
+        android:icon="@drawable/ic_details_black"
+        android:title="@string/bnv_details_item" />
+
+    <item
+        android:id="@+id/gridManagerFragment"
+        android:icon="@drawable/ic_settings_black"
+        android:title="@string/bnv_settings_item" />
+</menu>

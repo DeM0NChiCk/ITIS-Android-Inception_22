@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.samples.itis_android_inception_22.R
 import com.samples.itis_android_inception_22.databinding.FragmentEditTextPageBinding
@@ -53,7 +54,7 @@ class EditTextPageFragment : BaseFragment(R.layout.fragment_edit_text_page) {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
                 override fun onTextChanged(input: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                    if(input?.startsWith("+6") == true) {
+                    if (input?.startsWith("+6") == true) {
 
                     }
                     input?.let {
@@ -76,6 +77,9 @@ class EditTextPageFragment : BaseFragment(R.layout.fragment_edit_text_page) {
                     R.string.check_failed_text
                 }
                 Toast.makeText(requireContext(), toastTextRes, Toast.LENGTH_SHORT).show()
+            }
+            toNextFragBtn.setOnClickListener {
+                //findNavController().navigate(R.id.action_editTextPageFragment_to_gridManagerFragment)
             }
         }
     }

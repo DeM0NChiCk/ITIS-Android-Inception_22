@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/first_tab_navigation_graph"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.samples.itis_android_inception_22.presentation.fragments.mainPage.MainPageFragment"
+        android:label="MainPageFragment" />
+
+    <include app:graph="@navigation/second_tab_navigation_graph" />
+    <include app:graph="@navigation/third_tab_navigation_graph" />
+
+</navigation>
