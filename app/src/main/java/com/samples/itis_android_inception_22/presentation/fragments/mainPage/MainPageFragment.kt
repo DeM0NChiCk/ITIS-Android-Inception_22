@@ -1,7 +1,10 @@
 package com.samples.itis_android_inception_22.presentation.fragments.mainPage
 
+import android.app.AlarmManager
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +15,12 @@ import com.samples.itis_android_inception_22.databinding.FragmentMainPageBinding
 import com.samples.itis_android_inception_22.presentation.base.BaseActivity
 import com.samples.itis_android_inception_22.presentation.base.BaseFragment
 import com.samples.itis_android_inception_22.presentation.fragments.secondPage.SecondPageFragment
+import com.samples.itis_android_inception_22.utils.NotificationsManager
 
 class MainPageFragment : BaseFragment(R.layout.fragment_main_page) {
 
     private val viewBinding: FragmentMainPageBinding by viewBinding(FragmentMainPageBinding::bind)
+    private var notificationsManager: NotificationsManager? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -32,6 +37,7 @@ class MainPageFragment : BaseFragment(R.layout.fragment_main_page) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setToolbarTitle(R.string.main_fragment_title)
+        notificationsManager = NotificationsManager(ctx = requireContext())
         initClickListeners()
     }
 
@@ -60,9 +66,18 @@ class MainPageFragment : BaseFragment(R.layout.fragment_main_page) {
     }
 
     private fun initClickListeners() {
+        val handler = Handler(Looper.getMainLooper())
         with(viewBinding) {
+            var id = 101
+            var text = "sample"
+            var desc = "Description"
             addFragmentBtn.setOnClickListener {
-                //findNavController().navigate(R.id.action_mainPageFragment_to_editTextPageFragment)
+                handler.postDelayed({
+                    notificationsManager?.createBasicNotification(id, text, desc)
+                    id = 102
+                    text = "Edited sample"
+                    desc = "edited desc"
+                }, 2000L)
             }
             replaceFragmentBtn.setOnClickListener {
                 (requireActivity() as? BaseActivity)?.replaceFragment(
@@ -72,6 +87,13 @@ class MainPageFragment : BaseFragment(R.layout.fragment_main_page) {
             }
         }
     }
+
+    /*private fun alarmManager() {
+        val alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        alarmManager.apply {
+            set()
+        }
+    }*/
 
     companion object {
         const val MAIN_PAGE_FRAGMENT_TAG = "MAIN_PAGE_FRAGMENT_TAG"
