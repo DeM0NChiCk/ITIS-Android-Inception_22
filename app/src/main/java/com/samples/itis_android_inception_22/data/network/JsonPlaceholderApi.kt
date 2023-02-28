@@ -1,7 +1,7 @@
-package com.samples.itis_android_inception_22.presentation.retrofit
+package com.samples.itis_android_inception_22.data.network
 
-import com.samples.itis_android_inception_22.presentation.okhttp.PostsRequestBodySample
-import com.samples.itis_android_inception_22.presentation.pojo.PostsResponse
+import com.samples.itis_android_inception_22.data.network.okhttp.PostsRequestBodySample
+import com.samples.itis_android_inception_22.data.model.response.PostsResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header

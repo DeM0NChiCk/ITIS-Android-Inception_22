@@ -1,4 +1,4 @@
-package com.samples.itis_android_inception_22.presentation.retrofit
+package com.samples.itis_android_inception_22.data.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,6 +12,13 @@ object JsonService {
 
     private fun createInstance() {
         okHttpClient = OkHttpClient.Builder()
+            .addInterceptor { chain ->
+                val request = chain.request().newBuilder()
+                    .addHeader("Authorization", "Bearer: token")
+                    .build()
+
+                chain.proceed(request)
+            }
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
 

@@ -1,4 +1,4 @@
-package com.samples.itis_android_inception_22.presentation.pojo
+package com.samples.itis_android_inception_22.data.model.response
 
 import com.google.gson.annotations.SerializedName
 
