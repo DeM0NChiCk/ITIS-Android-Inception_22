@@ -1,7 +1,6 @@
-package com.samples.itis_android_inception_22.presentation.okhttp
+package com.samples.itis_android_inception_22.data.network.okhttp
 
 import com.google.gson.Gson
-import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request

@@ -1,17 +1,15 @@
 package com.samples.itis_android_inception_22.presentation
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.samples.itis_android_inception_22.R
+import com.samples.itis_android_inception_22.data.repository.WeatherRepository
 import com.samples.itis_android_inception_22.databinding.ActivityMainBinding
 import com.samples.itis_android_inception_22.presentation.base.BaseActivity
-import com.samples.itis_android_inception_22.presentation.okhttp.PostsRequestBody
-import com.samples.itis_android_inception_22.presentation.okhttp.PostsRequestBodySample
-import com.samples.itis_android_inception_22.presentation.retrofit.JsonService
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
@@ -19,5 +17,17 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val repository = WeatherRepository()
+        val city = "Moscow"
+        lifecycleScope.launch {
+            runCatching {
+                repository.getWeatherInfoByCityName(city = city)
+            }.onSuccess {
+                Log.i("MainActivity", "$city temp: ${it?.main?.temp}")
+            }.onFailure {
+                Toast.makeText(this@MainActivity, "Error: $it", Toast.LENGTH_SHORT).show()
+                Log.e("ExceptionOccurred", "$it")
+            }
+        }
     }
 }
