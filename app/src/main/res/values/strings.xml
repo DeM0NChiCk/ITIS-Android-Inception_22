@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ITIS-Android-Inception_22</string>
+
+    <!-- Main fragment-->
+    <string name="temperature_pattern">Температура: %1$s °C</string>
+    <string name="pressure_pattern">Давление: %1$s мм</string>
+    <string name="humidity_pattern">Влажность: %1$d %%</string>
+
+    <!-- Errors -->
+    <string name="exception_occurred_pattern">Exception occurred: %1$s</string>
 </resources>

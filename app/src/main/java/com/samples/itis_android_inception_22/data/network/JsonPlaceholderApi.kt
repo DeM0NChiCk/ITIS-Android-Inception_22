@@ -1,6 +1,5 @@
 package com.samples.itis_android_inception_22.data.network
 
-import com.samples.itis_android_inception_22.data.network.okhttp.PostsRequestBodySample
 import com.samples.itis_android_inception_22.data.model.response.PostsResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -24,9 +23,9 @@ interface JsonPlaceholderApi {
         @Query("filter") filterQuery: String? = null
     ): PostsResponse
 
-    @POST("posts")
+   /* @POST("posts")
     suspend fun createNewPost(
         @Header("Authorization") header: String,
         @Body requestBody: PostsRequestBodySample
-    ): PostsResponse
+    ): PostsResponse*/
 }

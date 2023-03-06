@@ -8,19 +8,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object OpenWeatherService {
 
-    private var okHttpClient: OkHttpClient? = null
-    private var retrofitInstance: OpenWeatherApiService? = null
+    //private var okHttpClient: OkHttpClient? = null
+    //private var retrofitInstance: OpenWeatherApiService? = null
 
     // Ленивая инициализация через делегат
-    private val okHttpClientLazy: OkHttpClient by lazy {
-        getOkHttpClient()
+    private val okHttpClient: OkHttpClient by lazy {
+        provideOkHttpClient()
     }
-    private val retrofitInstanceLazy: OpenWeatherApiService by lazy {
+    private val retrofitInstance: OpenWeatherApiService by lazy {
         createRetrofitInstance()
     }
 
 
-    private fun getOkHttpClient(): OkHttpClient {
+    private fun provideOkHttpClient(): OkHttpClient {
         val client = OkHttpClient.Builder()
             .addInterceptor { chain ->
                 val modifiedUrl = chain.request().url.newBuilder()
@@ -48,17 +48,5 @@ object OpenWeatherService {
         return retrofitBuilder.create(OpenWeatherApiService::class.java)
     }
 
-    private fun getRetrofitInstance() {
-        if (okHttpClient == null) {
-            okHttpClient = getOkHttpClient()
-        }
-        retrofitInstance = createRetrofitInstance()
-    }
-
-    fun getInstance(): OpenWeatherApiService? {
-        return if (retrofitInstance == null) {
-            getRetrofitInstance()
-            retrofitInstance
-        } else retrofitInstance
-    }
+    fun getInstance(): OpenWeatherApiService = retrofitInstance
 }
