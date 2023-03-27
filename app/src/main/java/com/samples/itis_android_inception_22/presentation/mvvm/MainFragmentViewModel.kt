@@ -6,6 +6,7 @@ import com.samples.itis_android_inception_22.di.DataDependency
 import com.samples.itis_android_inception_22.di.ViewModelArgsKeys
 import com.samples.itis_android_inception_22.domain.usecase.GetWeatherByCityNameUseCase
 import com.samples.itis_android_inception_22.presentation.model.WeatherDataModel
+import com.samples.itis_android_inception_22.presentation.screen.MainFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -41,12 +42,21 @@ class MainFragmentViewModel(
 
     companion object {
 
-        val factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
+
+        /*val factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
 
             override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
                 val getWeatherUseCase =
                     extras[ViewModelArgsKeys.getWeatherUseCaseKey] ?: throw IllegalArgumentException()
                 return (MainFragmentViewModel(getWeatherUseCase) as? T) ?: throw java.lang.IllegalStateException()
+            }
+        }*/
+
+        class MainViewModelFactory(private val getWeatherUseCase: GetWeatherByCityNameUseCase) :
+            ViewModelProvider.Factory {
+
+            override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
+                return (MainFragmentViewModel(getWeatherUseCase) as? T) ?: throw IllegalArgumentException()
             }
         }
     }

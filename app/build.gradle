@@ -80,11 +80,10 @@ dependencies {
     implementation "com.github.moxy-community:moxy-ktx:$moxy_version"
     kapt "com.github.moxy-community:moxy-compiler:$moxy_version"
 
-    // View model
-    /*def lifecycle_version = '2.6.0'
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
-    kapt("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")*/
+    // Dagger
+    def dagger_version = '2.45'
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     // Testing section
     testImplementation 'junit:junit:4.13.2'

@@ -2,8 +2,9 @@ package com.samples.itis_android_inception_22.data.mappers
 
 import com.samples.itis_android_inception_22.data.model.response.WeatherResponse
 import com.samples.itis_android_inception_22.domain.entity.WeatherEntity
+import javax.inject.Inject
 
-class WeatherResponseMapper {
+class WeatherResponseMapper @Inject constructor() {
 
     fun map(item: WeatherResponse?): WeatherEntity {
         return item?.let { response ->

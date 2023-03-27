@@ -4,13 +4,18 @@ import android.os.Bundle
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.samples.itis_android_inception_22.R
 import com.samples.itis_android_inception_22.databinding.ActivityMainBinding
+import com.samples.itis_android_inception_22.domain.usecase.GetWeatherByCityNameUseCase
 import com.samples.itis_android_inception_22.presentation.base.BaseActivity
 import com.samples.itis_android_inception_22.presentation.mvvm.MainMvvmFragment
 import com.samples.itis_android_inception_22.presentation.screen.MainFragment
+import javax.inject.Inject
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
     private val containerId: Int = R.id.main_container
+
+    @Inject
+    lateinit var weatherUseCase: GetWeatherByCityNameUseCase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,5 +1,6 @@
 package com.samples.itis_android_inception_22.presentation.mvvm
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -10,24 +11,25 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.MutableCreationExtras
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.samples.itis_android_inception_22.R
+import com.samples.itis_android_inception_22.WeatherAppApplication
 import com.samples.itis_android_inception_22.databinding.FragmentMainBinding
-import com.samples.itis_android_inception_22.di.DataDependency
-import com.samples.itis_android_inception_22.di.ViewModelArgsKeys
+import com.samples.itis_android_inception_22.domain.usecase.GetWeatherByCityNameUseCase
 import com.samples.itis_android_inception_22.presentation.base.BaseFragment
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
+import javax.inject.Inject
 
 class MainMvvmFragment : BaseFragment(R.layout.fragment_main) {
 
     private val viewBinding: FragmentMainBinding by viewBinding(FragmentMainBinding::bind)
 
-    private val viewModel: MainFragmentViewModel by viewModels(extrasProducer = {
-        MutableCreationExtras().apply {
-            set(ViewModelArgsKeys.getWeatherUseCaseKey, DataDependency.getWeatherUseCase)
-        }
-    }) {
-        MainFragmentViewModel.factory
+    @Inject
+    lateinit var viewModel: MainFragmentViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (context.applicationContext as? WeatherAppApplication)?.appComponent?.inject(fragment = this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
