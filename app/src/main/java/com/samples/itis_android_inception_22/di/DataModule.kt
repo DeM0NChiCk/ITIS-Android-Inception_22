@@ -47,17 +47,4 @@ class DataModule {
 
         return retrofitBuilder.create(OpenWeatherApiService::class.java)
     }
-
-    @Provides
-    fun provideWeatherRepository(
-        remoteSource: OpenWeatherApiService,
-        localSource: LocalSource,
-        mapper: WeatherResponseMapper
-    ): WeatherRepository {
-        return WeatherRepositoryImpl(
-            remoteSource = remoteSource,
-            localSource = localSource,
-            weatherResponseMapper = mapper
-        )
-    }
 }

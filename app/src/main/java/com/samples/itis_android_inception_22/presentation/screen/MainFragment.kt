@@ -10,6 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.samples.itis_android_inception_22.R
 import com.samples.itis_android_inception_22.databinding.FragmentMainBinding
 import com.samples.itis_android_inception_22.di.DataDependency
+import com.samples.itis_android_inception_22.presentation.MainActivity
 import com.samples.itis_android_inception_22.presentation.base.BaseFragment
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -36,6 +37,9 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
                     }
                     else -> false
                 }
+            }
+            gotoNextScreenBtn.setOnClickListener {
+                (requireActivity() as? MainActivity)?.navigate(SecondScreenFragment.getInstance(), isNeedToDetach = true)
             }
         }
     }

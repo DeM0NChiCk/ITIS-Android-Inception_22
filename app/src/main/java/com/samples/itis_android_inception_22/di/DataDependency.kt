@@ -1,5 +1,6 @@
 package com.samples.itis_android_inception_22.di
 
+import com.samples.itis_android_inception_22.data.local.LocalSource
 import com.samples.itis_android_inception_22.data.mappers.WeatherResponseMapper
 import com.samples.itis_android_inception_22.data.network.OpenWeatherApiService
 import com.samples.itis_android_inception_22.data.network.OpenWeatherService
@@ -15,7 +16,7 @@ object DataDependency {
 
     private val weatherRepository: WeatherRepository = WeatherRepositoryImpl(
         remoteSource = openWeatherApi,
-        localSource = Any(),
+        localSource = LocalSource(),
         weatherResponseMapper = weatherResponseMapper
     )
 

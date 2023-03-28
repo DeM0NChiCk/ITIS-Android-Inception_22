@@ -1,17 +1,17 @@
 package com.samples.itis_android_inception_22.presentation.mvvm
 
+import android.util.Log
 import androidx.lifecycle.*
-import androidx.lifecycle.viewmodel.CreationExtras
-import com.samples.itis_android_inception_22.di.DataDependency
-import com.samples.itis_android_inception_22.di.ViewModelArgsKeys
 import com.samples.itis_android_inception_22.domain.usecase.GetWeatherByCityNameUseCase
 import com.samples.itis_android_inception_22.presentation.model.WeatherDataModel
-import com.samples.itis_android_inception_22.presentation.screen.MainFragment
-import kotlinx.coroutines.Dispatchers
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class MainFragmentViewModel(
+class MainFragmentViewModel @AssistedInject constructor(
+    @Assisted(ASSISTED_VALUE_KEY) private val assistedValue: String,
     private val getWeatherUseCase: GetWeatherByCityNameUseCase
 ) : ViewModel() {
 
@@ -23,6 +23,10 @@ class MainFragmentViewModel(
 
     private val _errorState: MutableLiveData<Throwable> = MutableLiveData(null)
     val errorState: LiveData<Throwable> = _errorState
+
+    init {
+        Log.d("MainViewModelTag", assistedValue)
+    }
 
     fun requestCityByName(cityName: String) {
         viewModelScope.launch {
@@ -40,24 +44,13 @@ class MainFragmentViewModel(
         }
     }
 
+    @AssistedFactory
+    interface Factory {
+        fun create(@Assisted(ASSISTED_VALUE_KEY) assistedValue: String): MainFragmentViewModel
+    }
+
     companion object {
 
-
-        /*val factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-
-            override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
-                val getWeatherUseCase =
-                    extras[ViewModelArgsKeys.getWeatherUseCaseKey] ?: throw IllegalArgumentException()
-                return (MainFragmentViewModel(getWeatherUseCase) as? T) ?: throw java.lang.IllegalStateException()
-            }
-        }*/
-
-        class MainViewModelFactory(private val getWeatherUseCase: GetWeatherByCityNameUseCase) :
-            ViewModelProvider.Factory {
-
-            override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
-                return (MainFragmentViewModel(getWeatherUseCase) as? T) ?: throw IllegalArgumentException()
-            }
-        }
+        private const val ASSISTED_VALUE_KEY = "ASSISTED_STRING_VALUE"
     }
 }

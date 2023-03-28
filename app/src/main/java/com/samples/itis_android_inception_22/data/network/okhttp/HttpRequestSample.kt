@@ -40,7 +40,6 @@ fun main() {
     if (response.isSuccessful) {
         response.body?.string()?.let { responseBodyString ->
             val signInResponseBody = gson.fromJson(responseBodyString, PostsResponseBody::class.java)
-            println("TEST TAG - Received Id: ${signInResponseBody.id}")
         }
     } else {
         throw java.lang.IllegalStateException()

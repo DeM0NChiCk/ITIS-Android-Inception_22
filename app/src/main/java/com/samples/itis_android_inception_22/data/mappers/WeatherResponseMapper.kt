@@ -10,9 +10,9 @@ class WeatherResponseMapper @Inject constructor() {
         return item?.let { response ->
             with(response) {
                 WeatherEntity(
-                    temperature = item.main?.temp ?: 0.0f,
-                    pressure = item.main?.pressure ?: 0.0f,
-                    humidity = item.main?.humidity ?: 0.0f
+                    temperature = main?.temp ?: 0.0f,
+                    pressure = main?.pressure ?: 0.0f,
+                    humidity = main?.humidity ?: 0.0f
                 )
             }
         } ?: WeatherEntity(
